@@ -12,7 +12,8 @@ type GreetCommandOptions = {
 };
 
 export const GreetCommand: BaseCommand<GreetCommandOptions> = {
-  command: "greet",
+  trrigger: "greet",
+  command: "greet <name>",
   describe: "Greet a user",
   positional: {
     name: { type: "string", description: "Name of the user to greet" },

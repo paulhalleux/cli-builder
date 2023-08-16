@@ -1,4 +1,4 @@
-import { BaseCommand } from "../BaseCommand";
+import { BaseCommand } from "./base-command";
 
 /**
  Interface representing a command manager.

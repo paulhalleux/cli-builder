@@ -1,7 +1,7 @@
 {
   "name": "@paulhalleux/cli",
-  "version": "1.0.0",
-  "description": "A wrapper around yargs to create command line tools in JavaScript",
+  "version": "1.0.1",
+  "description": "A simple wrapper around yargs to create command line tools in JavaScript",
   "author": "Paul HALLEUX",
   "license": "MIT",
   "scripts": {
@@ -11,10 +11,11 @@
   "devDependencies": {
     "@types/node": "^18.15.5",
     "@types/yargs": "^17.0.23",
-    "prettier": "^2.8.6",
     "typescript": "^5.0.2"
   },
   "dependencies": {
+    "liquidjs": "^10.8.4",
+    "prettier": "^3.0.2",
     "yargs": "^17.7.1"
   },
   "publishConfig": {

@@ -1,7 +1,6 @@
 import yargs, { Arguments, Argv } from "yargs";
 import { hideBin } from "yargs/helpers";
-import { BaseCommand } from "../BaseCommand";
-import { CommandManager } from "./CommandManager";
+import { BaseCommand, CommandManager } from "../types";
 
 /**
  * A class that implements the CommandManager interface and uses yargs to manage commands.
@@ -39,16 +38,20 @@ export class YargsCommandManager implements CommandManager {
     // Add each registered command to yargs.
     for (const command of this.commands) {
       const builder = (y: Argv) => {
-        command.positional && Object.keys(command.positional)?.forEach((k) => y.positional(k, command.positional![k]));
-        command.options?.forEach(y.options);
+        // Configure positional arguments
+        command.positional && Object.keys(command.positional).forEach((k) => y.positional(k, command.positional![k]));
+
+        // Configure options
+        command.options && Object.keys(command.options).forEach((k) => y.options(k, command.options![k]));
       };
-      y = y.command(command.command, command.describe, builder, command.handler);
+
+      y.command(command.command, command.describe, builder, command.handler);
     }
 
     // Parse the arguments and execute the specified command.
     const result: Arguments<any> = await y.parseAsync(argv).catch(() => y.showHelp());
     const command = result._[0];
-    if (!command) {
+    if (!command || this.commands.every((c) => c.trigger !== command)) {
       y.showHelp();
       process.exit(1);
     }

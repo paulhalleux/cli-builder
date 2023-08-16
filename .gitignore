@@ -10,7 +10,6 @@ Thumbs.db
 
 # Yarn files
 node_modules/
-yarn.lock
 
 # Compiled output
 /dist/
