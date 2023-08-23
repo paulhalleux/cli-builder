@@ -1,6 +1,6 @@
 {
   "name": "@paulhalleux/cli",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A simple wrapper around yargs to create command line tools in JavaScript",
   "author": "Paul HALLEUX",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "publish-package": "yarn build && yarn publish"
   },
   "peerDependencies": {
-    "mdast": "^3.0.0"
+    "@types/mdast": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.5",
