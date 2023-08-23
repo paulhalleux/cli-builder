@@ -1,6 +1,6 @@
 {
   "name": "@paulhalleux/cli",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A simple wrapper around yargs to create command line tools in JavaScript",
   "author": "Paul HALLEUX",
   "license": "MIT",
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "publish": "yarn publish"
+    "publish-package": "yarn build && yarn publish"
   },
   "devDependencies": {
     "@types/node": "^18.15.5",
@@ -19,9 +19,18 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^2.3.0",
+    "@types/react": "^18.2.21",
+    "fast-glob": "^3.3.1",
     "liquidjs": "^10.8.4",
+    "mdast": "^3.0.0",
     "prettier": "^3.0.2",
+    "rimraf": "^5.0.1",
     "yargs": "^17.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulhalleux/cli-builder.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
