@@ -1,4 +1,6 @@
 export * from "./logging";
-export * from "./liquid";
+export * from "./template";
 export * from "./command-manager";
 export * from "./base-command";
+export * from "./file";
+export * from "./transpile";
